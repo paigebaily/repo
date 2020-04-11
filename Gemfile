@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  gem 'byebug', platform: [:mri, :mingw, :x64_mingw]
   gem 'cucumber'
   gem 'cucumber-rails', :require=>false
   gem 'database_cleaner'
