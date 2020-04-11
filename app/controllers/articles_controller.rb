@@ -1,16 +1,15 @@
 class ArticlesController < ApplicationController
     def new
       @article = Article.new
-      #byebug
+      
       if @article.save
-        #byebug
+        
         redirect_to @article
       else
       render 'new'
       end 
     end
-  @article
-  #<Article id: 6, title: "New Article 4", text:"Another new article "
+  
     def index
       @articles=Article.all 
     end
@@ -20,9 +19,10 @@ class ArticlesController < ApplicationController
     
 def create
   @article =Article.new(article_params)
-  byebug
+  @article.user = current_user
+  
   if @article.save
-    byebug
+    
     redirect_to @article
   else
     render'new'
